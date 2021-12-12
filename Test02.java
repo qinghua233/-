@@ -13,13 +13,13 @@ public class Test02 {
 
         Customer LS=new Customer();
         LS.name="lisi";
-        LS.time=LocalDate.of(2020,12,30);
+        LS.time=LocalDate.of(2020,12,31);
         LS.ruanum=4;
 
         Customer WW=new Customer();
         WW.ruanum=5;
         WW.name="wangwu";
-        WW.time=LocalDate.of(2020,11,30);
+        WW.time=LocalDate.of(2020,12,31);
 
         Customer CYH=new Customer();
         CYH.name="cyh";
@@ -50,6 +50,7 @@ public class Test02 {
         xiaojv.price=400;
 
         MyCatCafe ruaheaven=new MyCatCafe();
+        ruaheaven.A=LocalDate.of(2020,12,30);
         ruaheaven.cat.add(xiaobai);
         ruaheaven.cat.add(xiaohei);
         ruaheaven.cat.add(xiaojv);
@@ -64,19 +65,12 @@ public class Test02 {
         } catch (InsufficientBalanceException e) {
             e.printStackTrace();
         };
-        try {
-            ruaheaven.Entertaincustomers(ZS);
-            ruaheaven.Entertaincustomers(LS);
-            ruaheaven.Entertaincustomers(CYH);
-            ruaheaven.Entertaincustomers(CY);
-            ruaheaven.Entertaincustomers(WW);
+        ruaheaven.Entertaincustomers(ZS);
+        ruaheaven.Entertaincustomers(WW);
+        ruaheaven.Entertaincustomers(CYH);
 
 
-        } catch (CatNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        ruaheaven.Closeshop(LocalDate.of(2020,12,30));
+        ruaheaven.Closeshop(ruaheaven.A);
 
 
 
