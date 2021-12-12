@@ -53,7 +53,7 @@ public class Test02 {
         xiaojv.pingzhong="OrangeCat";
 
         MyCatCafe ruaheaven=new MyCatCafe();
-        ruaheaven.A=LocalDate.of(2020,12,30);
+        ruaheaven.A=LocalDate.of(2020,12,31);
         ruaheaven.cat.add(xiaobai);
         ruaheaven.cat.add(xiaohei);
         ruaheaven.cat.add(xiaojv);
@@ -77,9 +77,12 @@ public class Test02 {
         ruaheaven.Entertaincustomers(WW);
         ruaheaven.Entertaincustomers(CYH);
 
+       ruaheaven.GUKE();
 
 
-        System.out.println("歇业结算");
+
+        System.out.println("歇业结算:");
+        System.out.println("今日顾客");
         ruaheaven.Closeshop(ruaheaven.A);
 
 
