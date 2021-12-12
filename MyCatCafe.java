@@ -4,19 +4,19 @@ import java.sql.Array;
 import java.time.LocalDate;
 import java.util.*;
 
-public class MyCatCafe implements CatCafe{
+public class MyCatCafe implements exam.CatCafe {
     LocalDate A;
     double balance;
     List<Cat> cat=new ArrayList();
 Iterator it=cat.iterator();
-List<Customer> Customer=new ArrayList();
+List<exam.Customer> Customer=new ArrayList();
     Iterator it2=cat.iterator();
-    public void BUYCAT(Cat CAT) throws InsufficientBalanceException {
+    public void BUYCAT(Cat CAT) throws exam.InsufficientBalanceException {
         if (balance>CAT.price){
             cat.add(CAT);
             balance=balance-CAT.price;
         }else {
-throw new InsufficientBalanceException("您的余额不足，自动判断养不活多余的猫");
+throw new exam.InsufficientBalanceException("鎮ㄧ殑浣欓涓嶈冻锛岃嚜鍔ㄥ垽鏂吇涓嶆椿澶氫綑鐨勭尗");
         }
 
 
@@ -24,17 +24,25 @@ throw new InsufficientBalanceException("您的余额不足，自动判断养不活多余的猫");
 
 
 
-    public void Entertaincustomers(Customer customer) throws CatNotFoundException {
+    public void Entertaincustomers(Customer customer) {
 
         Object cAt[]= cat.toArray();
         Random random = new Random();
-
+//&&customer.time==A
 if (cat.size()>0){
+    if(customer.time.isEqual(A)){
     int shu = random.nextInt(cat.size());
+    System.out.println(cat.size());
     Customer.add(customer);
     cat.remove(shu);
-    System.out.println(cAt[shu]);
-}else throw new CatNotFoundException("没猫了啊");
+    System.out.println(cat.size());
+    System.out.println(cAt[shu]);}
+    else Customer.add(customer);
+}else try {
+    throw new CatNotFoundException("娌＄尗浜嗗晩");
+} catch (CatNotFoundException e) {
+    e.printStackTrace();
+}
 
 
     }
