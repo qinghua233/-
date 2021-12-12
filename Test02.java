@@ -36,18 +36,21 @@ public class Test02 {
         xiaobai.age=2;
         xiaobai.name="xiaobai";
         xiaobai.sexy=true;
+        xiaobai.pingzhong="Shorthair";
 
-       Cat xiaohei=new BlackCat();
-       xiaohei.name="xiaohei";
-       xiaohei.sexy=false;
-       xiaohei.price=400;
-       xiaohei.age=1;
+        Cat xiaohei=new BlackCat();
+        xiaohei.name="xiaohei";
+        xiaohei.sexy=false;
+        xiaohei.price=400;
+        xiaohei.age=1;
+        xiaohei.pingzhong="BlackCat";
 
         Cat xiaojv=new OrangeCat();
         xiaojv.age=3;
         xiaojv.name="xiaojv";
         xiaojv.sexy=true;
         xiaojv.price=400;
+        xiaojv.pingzhong="OrangeCat";
 
         MyCatCafe ruaheaven=new MyCatCafe();
         ruaheaven.A=LocalDate.of(2020,12,30);
@@ -58,18 +61,25 @@ public class Test02 {
         ruaheaven.balance=1000.0;
         Cat dabai=new Shorthair();
         dabai.price=200;
+        dabai.sexy=true;
+        dabai.name="Dabai";
+        dabai.age=1;
+        dabai.pingzhong="Shorthair";
 
-
+        System.out.println("购买猫咪---------");
         try {
             ruaheaven.BUYCAT(dabai);
         } catch (InsufficientBalanceException e) {
             e.printStackTrace();
         };
+        System.out.println("接客猫的信息");
         ruaheaven.Entertaincustomers(ZS);
         ruaheaven.Entertaincustomers(WW);
         ruaheaven.Entertaincustomers(CYH);
 
 
+
+        System.out.println("歇业结算");
         ruaheaven.Closeshop(ruaheaven.A);
 
 
