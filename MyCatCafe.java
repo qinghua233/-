@@ -44,9 +44,19 @@ public class MyCatCafe implements exam.CatCafe {
         } catch (CatNotFoundException e) {
             e.printStackTrace();
         }
+    }
 
+    public void GUKE(){
+        System.out.println("所有顾客");
+        for (Customer C:Customer
+        ) {
+            System.out.println(C);
+        }
 
     }
+
+
+
 
     public void Closeshop(LocalDate A){
         for (int c=0;c<Customer.size();c++){
@@ -60,8 +70,6 @@ public class MyCatCafe implements exam.CatCafe {
         System.out.println("余额"+balance);
     };
 }
-
-
 
 
 
