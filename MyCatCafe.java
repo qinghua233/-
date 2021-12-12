@@ -32,10 +32,10 @@ throw new exam.InsufficientBalanceException("您的余额不足，自动判断�
 if (cat.size()>0){
     if(customer.time.isEqual(A)){
     int shu = random.nextInt(cat.size());
-    System.out.println(cat.size());
+   
     Customer.add(customer);
     cat.remove(shu);
-    System.out.println(cat.size());
+    
     System.out.println(cAt[shu]);}
     else Customer.add(customer);
 }else try {
