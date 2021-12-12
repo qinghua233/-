@@ -6,7 +6,8 @@ public abstract class Cat {
     int age;
     boolean sexy;
     double price;
-    void information(String name,int age,boolean sexy,double price){};
+    String pingzhong;
+    void information(String name,int age,boolean sexy,double price,String pingzhong){};
 enum Result{Male,Female}
 public Result S(boolean sexy){
     if (sexy=true){
@@ -21,6 +22,7 @@ public Result S(boolean sexy){
                 ", age=" + age +
                 ", sexy=" + S(sexy) +
                 ", price=" + price +
+                ",pingzhong="+pingzhong+
                 '}';
     }
 }
